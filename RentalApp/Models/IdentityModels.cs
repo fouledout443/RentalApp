@@ -15,5 +15,7 @@ namespace RentalApp.Models
             // Add custom user claims here
             return userIdentity;
         }
+        public virtual UserInfo UserInfo { get; set; }
+
     }
 }
