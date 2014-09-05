@@ -26,11 +26,22 @@ namespace RentalApp.Models
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             base.OnModelCreating(modelBuilder);
 
+            //Adding the optional relationship between a residence having a landlord
             modelBuilder.Entity<Residence>()
-                .HasOptional<LandLord>(r => r.LandLord);
-                
+                .HasOptional<LandLord>(r => r.LandLord);                
             
         }
+
+        //Adding these DbSets is creating the tables in the database
+        public DbSet<UserInfo> UserInfo { get; set; }
+        public DbSet<Residence> Residence { get; set; }
+        public DbSet<Employer> Employers { get; set; }
+        public DbSet<Reference> References { get; set; }
+        public DbSet<LandLord> LandLords { get; set; }
+    }
+}
+
+#region Online Example
 //public class User
 //{
 //    [Key]
@@ -51,13 +62,8 @@ namespace RentalApp.Models
 //            .HasOptional<Contact>(u => u.Contact)
 //            .WithOptionalDependent(c => c.User).Map(p => p.MapKey("ContactID"));
 
+#endregion
 
 
-        //Adding these DbSets is creating the tables in the database
-        public DbSet<UserInfo> UserInfo { get; set; }
-        public DbSet<Residence> Residence { get; set; }
-        public DbSet<Employer> Employers { get; set; }
-        public DbSet<Reference> References { get; set; }
-        public DbSet<LandLord> LandLords { get; set; }
-    }
-}
+
+
