@@ -9,13 +9,15 @@ using RentalApp.Models;
 
 namespace RentalApp.DAL
 {
-    public class RentalRepository<TEntity> where TEntity : class
+    //Just a generic repository to making calls to the OR/M, as I need special methods/operations, 
+    //I will derive a class from this class and add them there
+    public class Repository<TEntity> where TEntity : class
     {
         internal ApplicationDbContext context;
         internal DbSet<TEntity> dbSet;
 
         //Repository constructor
-        public RentalRepository(ApplicationDbContext context)
+        public Repository(ApplicationDbContext context)
         {
             this.context = context;
             this.dbSet = context.Set<TEntity>();
@@ -27,7 +29,7 @@ namespace RentalApp.DAL
             return dbSet.Find(id);
         }
 
-        public virtual void Insert(TEntity entity)
+        public virtual void Create(TEntity entity)
         {
             dbSet.Add(entity);
         }
@@ -53,17 +55,12 @@ namespace RentalApp.DAL
             context.Entry(entityToUpdate).State = EntityState.Modified;
         }
 
+        //I dont quite understand how this method works, after reading on the repository
+        //pattern, the website said that by exposing IQueryable<T> you get no benefit over 
+        //using the OR/M directly instead of through a repository class
+        //http://blog.gauffin.org/2013/01/repository-pattern-done-right/
         //public virtual IEnumerable<TEntity> Get(
         //    Expression<Func<TEntity, bool>> filter = null, 
         //    Func<IQueryable<TEntity>,>)
-
-        //public virtual void idk(TEntity entity, int id)
-        //{
-        //    var user = context.UserInfo.Where(s => s.UserInfoID == id).FirstOrDefault();
-        //    foreach (Address address in user.Addresses)
-        //    {
-        //        Console.WriteLine("test");
-        //    }
-        //}
     }
 }

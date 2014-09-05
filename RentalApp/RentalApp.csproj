@@ -185,7 +185,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="DAL\RentalRepository.cs" />
+    <Compile Include="DAL\Repository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -193,13 +193,23 @@
     <Compile Include="Migrations\201408302250325_initial.Designer.cs">
       <DependentUpon>201408302250325_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201409050506304_RenamingAddresses.cs" />
+    <Compile Include="Migrations\201409050506304_RenamingAddresses.Designer.cs">
+      <DependentUpon>201409050506304_RenamingAddresses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409050510484_AddingResidenceFK.cs" />
+    <Compile Include="Migrations\201409050510484_AddingResidenceFK.Designer.cs">
+      <DependentUpon>201409050510484_AddingResidenceFK.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Address.cs" />
+    <Compile Include="Models\Residence.cs" />
     <Compile Include="Models\Application.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Employer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\LandLord.cs" />
+    <Compile Include="Models\Reference.cs" />
     <Compile Include="Models\UserInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -274,6 +284,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201408302250325_initial.resx">
       <DependentUpon>201408302250325_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409050506304_RenamingAddresses.resx">
+      <DependentUpon>201409050506304_RenamingAddresses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409050510484_AddingResidenceFK.resx">
+      <DependentUpon>201409050510484_AddingResidenceFK.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
