@@ -56,5 +56,14 @@ namespace RentalApp.DAL
         //public virtual IEnumerable<TEntity> Get(
         //    Expression<Func<TEntity, bool>> filter = null, 
         //    Func<IQueryable<TEntity>,>)
+
+        //public virtual void idk(TEntity entity, int id)
+        //{
+        //    var user = context.UserInfo.Where(s => s.UserInfoID == id).FirstOrDefault();
+        //    foreach (Address address in user.Addresses)
+        //    {
+        //        Console.WriteLine("test");
+        //    }
+        //}
     }
 }
