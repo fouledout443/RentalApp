@@ -18,7 +18,9 @@ namespace RentalApp.Models
         public DateTime? Birthdate { get; set; }
 
         //These virtual properties are called 'navigation fields' which allows entity framework
-        //to see that an instance of UserInfo can have many addresses or employers
+        //to see that an instance of UserInfo can have many addresses or employers, having the 
+        //keyword virtual allows EF to 'eagerly' load the collections associated with a particular
+        //instance of UserInfo
         public virtual ICollection<Residence> Residence { get; set; }
         public virtual ICollection<Employer> Employers { get; set; }
         public virtual ICollection<Reference> References { get; set; }
