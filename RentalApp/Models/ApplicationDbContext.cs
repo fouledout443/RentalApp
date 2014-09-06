@@ -26,10 +26,10 @@ namespace RentalApp.Models
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             base.OnModelCreating(modelBuilder);
 
-            //Adding the optional relationship between a residence having a landlord
+            //Adding the optional relationship for a residence having a landlord
             modelBuilder.Entity<Residence>()
-                .HasOptional<LandLord>(r => r.LandLord);                
-            
+                .HasOptional<LandLord>(r => r.LandLord)
+                .WithOptionalDependent(l => l.Residence).Map(p => p.MapKey("Residence"));
         }
 
         //Adding these DbSets is creating the tables in the database

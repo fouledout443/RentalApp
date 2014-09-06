@@ -201,6 +201,14 @@
     <Compile Include="Migrations\201409050510484_AddingResidenceFK.Designer.cs">
       <DependentUpon>201409050510484_AddingResidenceFK.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201409061543514_LandLordFK.cs" />
+    <Compile Include="Migrations\201409061543514_LandLordFK.Designer.cs">
+      <DependentUpon>201409061543514_LandLordFK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409061607417_addingStateToResidence.cs" />
+    <Compile Include="Migrations\201409061607417_addingStateToResidence.Designer.cs">
+      <DependentUpon>201409061607417_addingStateToResidence.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Residence.cs" />
@@ -290,6 +298,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201409050510484_AddingResidenceFK.resx">
       <DependentUpon>201409050510484_AddingResidenceFK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409061543514_LandLordFK.resx">
+      <DependentUpon>201409061543514_LandLordFK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409061607417_addingStateToResidence.resx">
+      <DependentUpon>201409061607417_addingStateToResidence.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -12,6 +12,6 @@ namespace RentalApp.Models
         public string AgencyName { get; set; }
         public string ContactName { get; set; }
         public int PhoneNumber { get; set; }
-        //public virtual Residence Residence  { get; set; }
+        public virtual Residence Residence  { get; set; }
     }
 }
