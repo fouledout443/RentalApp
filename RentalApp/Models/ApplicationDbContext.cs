@@ -41,29 +41,6 @@ namespace RentalApp.Models
     }
 }
 
-#region Online Example
-//public class User
-//{
-//    [Key]
-//    public string Username { get; set; }
-
-//    public virtual Contact Contact { get; set; }
-//}
-
-//public class Contact
-//{
-//    [Key]
-//    public int ID { get; set; }
-//    public string Name { get; set; }
-
-//    public virtual User User { get; set; }
-//}
-//        modelBuilder.Entity<User>()
-//            .HasOptional<Contact>(u => u.Contact)
-//            .WithOptionalDependent(c => c.User).Map(p => p.MapKey("ContactID"));
-
-#endregion
-
 
 
 

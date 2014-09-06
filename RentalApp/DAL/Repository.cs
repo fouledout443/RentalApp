@@ -9,7 +9,7 @@ using RentalApp.Models;
 
 namespace RentalApp.DAL
 {
-    //Just a generic repository to making calls to the OR/M, as I need special methods/operations, 
+    //Just a generic repository for making calls to the OR/M, as I need special methods/operations, 
     //I will derive a class from this class and add them there
     public class Repository<TEntity> where TEntity : class
     {
@@ -22,7 +22,7 @@ namespace RentalApp.DAL
             this.context = context;
             this.dbSet = context.Set<TEntity>();
         }
-
+       
         //CRUD Operations
         public virtual TEntity GetByID(object id)
         {
