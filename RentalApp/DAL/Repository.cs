@@ -23,6 +23,36 @@ namespace RentalApp.DAL
             this.dbSet = context.Set<TEntity>();
         }
 
+        // grab things certain things from list
+        public virtual IEnumerable<TEntity> Get(
+       Expression<Func<TEntity, bool>> filter = null,
+       Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
+       string includeProperties = "")
+        {
+            //creates an IQueryable object and then applies the filter expression if there is one:
+            IQueryable<TEntity> query = dbSet;
+
+            if (filter != null)
+            {
+                query = query.Where(filter);
+            }
+            //Next it applies the eager-loading expressions after parsing the comma-delimited list:
+            foreach (var includeProperty in includeProperties.Split
+                (new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+            {
+                query = query.Include(includeProperty);
+            }
+            //applies the orderBy expression if there is one and returns the results; otherwise it returns the results from the unordered query:
+            if (orderBy != null)
+            {
+                return orderBy(query).ToList();
+            }
+            else
+            {
+                return query.ToList();
+            }
+        }
+
         //CRUD Operations
         public virtual TEntity GetByID(object id)
         {
