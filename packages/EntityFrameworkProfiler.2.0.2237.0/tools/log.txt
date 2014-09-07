@@ -1,0 +1,10 @@
+2014-09-02 22:05:50,828 [1] DEBUG HibernatingRhinos.Profiler.Client.Host.ClientService [(null)] - Profiler initialized. Build: 2237
+2014-09-02 22:05:57,405 [1] DEBUG HibernatingRhinos.Profiler.Client.Host.ClientService [(null)] - Attempt to start HTTP listener
+2014-09-02 22:05:57,407 [1] DEBUG HibernatingRhinos.Profiler.Client.Host.ClientService [(null)] - HTTP listener started successfully
+2014-09-02 22:06:04,173 [7] FATAL HibernatingRhinos.Profiler.Client.Host.ClientService [(null)] - Unhandled exception ruthlessly killed application
+System.Runtime.InteropServices.InvalidOleVariantTypeException: sn
+   at HibernatingRhinos.Profiler.Client.Host.OutOfProcessClientService.SelfVerification()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.ThreadHelper.ThreadStart()
